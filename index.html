@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assistant de création de contenu</title>
+  <meta content="text/html;charset=UTF-8" http-equiv="content-type">
+  <meta charset="utf-8">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <center>
+    <h1>Assitant de création de contenu</h1>
+  </center>
+  <div id="d1" style="background-color: #f1948a; padding: 15px;">
+    <div id="dt">
+      <label for="titre">Titre</label> : <input type="text" name="titre" id="titre" style="width:400px;"/>
+      <br>
+      <label for="titre_kw">Mots clés du titre</label> : <input type="text" name="titre_kw" id="titre_kw" style="width:900px;"/>
+      <br>
+      <textarea name="titre_kw" id="titre_kw" rows="5" cols="50"></textarea>
+    </div>
+    <br><br>
+    <div id="dst">
+    </div>
+    <input type="button" name="+st" value="Ajouter un sous titre" id="+st" onclick="AddSubTitle();"/>
+  </div>
+  <br><br>
+  <center>
+    <input type="button" name="valider" value="Copier dans le presse papier" id="valider" onclick="Validate();" style="height:60px; width:500px"/>
+  </center>
+</body>
+</html>
