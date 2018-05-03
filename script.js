@@ -178,12 +178,12 @@ function AddSsubTitle(elmt) {
       sst_pos = nbsst_9;
       break;
     case '10':
-      nbsst_10 = nbsst_10s + 1;
+      nbsst_10 = nbsst_10 + 1;
       sst_pos = nbsst_10;
       break;
   }
   var new_SsubTitle = "<div id='sst" + st_pos + "_" + sst_pos + "' style='background-color: #f8c471; margin:25px; padding:15px;'> <label for='sstitre" + st_pos + "_" + sst_pos + "'>Sous sous titre </label> : <input type='text' name='sstitre" + st_pos + "_" + sst_pos + "' id='sstitre" + st_pos + "_" + sst_pos +
-   "' style='width:400px;' /> <br> <label for='sstitre" + nb_st + "_kw'>Mots clés du sous sous titre</label> : <input type='text' name='sstitre" + st_pos + "_" + sst_pos + "_kw' id='sstitre" + st_pos + "_" + sst_pos +
+   "' style='width:400px;' /> <br> <label for='sstitre" + nb_st + "_" + sst_pos + "_kw'>Mots clés du sous sous titre</label> : <input type='text' name='sstitre" + st_pos + "_" + sst_pos + "_kw' id='sstitre" + st_pos + "_" + sst_pos +
     "_kw' style='width:900px;' /> <br> <textarea name='text_sstitre" + st_pos + "_" + sst_pos + "' id='text_sstitre" + st_pos + "_" + sst_pos + "' rows='5' cols='50'></textarea> <br> <div id='dssst" + st_pos + "_" + sst_pos + "'> </div> " +
     "<input type='button' name='+ssstitre' value='Ajouter un sous sous sous titre' id='+ssstitre' onclick='AddSssubTitle(this.parentNode);'> <br><br> </div>";
   document.getElementById("dsst" + st_pos).innerHTML = document.getElementById("dsst"+ st_pos).innerHTML + new_SsubTitle;
@@ -655,5 +655,86 @@ function AddSssubTitle(elmt) {
 
 
 
-function validate() {
+function Validate() {
+
+  var code;
+  var input;
+
+  var nb_sst;
+  var nb_ssst;
+
+  code = "<article class='container ";
+  input = document.getElementById("titre_kw").value;
+  code = code + input + "'> \n\n <h3 class='container' id='a";
+  input = document.getElementById("article_pos").value;
+  code = code + input + "'>";
+  input = document.getElementById("titre").value;
+  code = code + input + "</h3> \n\n";
+  input = document.getElementById("text_titre").value;
+  code = code + input + "\n\n ";
+
+
+
+  for (var i = 1 ; i <= nb_st ; i++)
+  {
+    input = document.getElementById("stitre" + i + "_kw").value;
+    code = code + "<div class='" + input + "'> \n\n <h4 class='container' id='a";
+    input = document.getElementById("article_pos").value;
+    code = code + input + "st" + i + ">'";
+    input = document.getElementById("stitre" + i).value;
+    code = code + input + "</h4> \n\n";
+    input = document.getElementById("text_stitre" + i).value;
+    code = code + input + "\n\n ";
+
+    switch (i) {
+      case 1:
+        nb_sst = nbsst_1;
+        break;
+      case '2':
+        nb_sst = nbsst_2;
+        break;
+      case '3':
+        nb_sst = nbsst_3;
+        break;
+      case '4':
+        nb_sst = nbsst_4;
+        break;
+      case '5':
+        nb_sst = nbsst_5;
+        break;
+      case '6':
+        nb_sst = nbsst_6;
+        break;
+      case '7':
+        nb_sst = nbsst_7;
+        break;
+      case '8':
+        nb_sst = nbsst_8;
+        break;
+      case '9':
+        nb_sst = nbsst_9;
+        break;
+      case '10':
+        nb_sst = nbsst_10;
+        break;
+    }
+
+    for (var j = 1 ; j <= nb_sst ; j++)
+    {
+      input = document.getElementById("sstitre" + i + "_" + j + "_kw").value;
+      code = code + "<div class='" + input + "'> \n\n <h5 class='container' id='a";
+      input = document.getElementById("article_pos").value;
+      code = code + input + "st" + i + "sst" + j + ">'";
+      input = document.getElementById("sstitre" + i + "_" + j).value;
+      code = code + input + "</h5> \n\n";
+      input = document.getElementById("text_sstitre" + i + "_" + j).value;
+      code = code + input + "\n\n </div>";
+    }//fin boucle for j (nb_sst)
+    code = code + " \n </div>";
+
+  } //fin boucle for i (nb_st)
+  code = code + " \n </article>";
+
+  alert(code);
+
 };
