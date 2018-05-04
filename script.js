@@ -115,8 +115,13 @@ if (nb_st > 0) {
   document.getElementById("+st").hide();
 }
 
-
-
+document.addEventListener("DOMContentLoaded", function(event) {
+  document.getElementById("titre_kw").value = "";
+  document.getElementById("article_pos").value = "";
+  document.getElementById("titre").value = "";
+  document.getElementById("text_titre").value = "";
+  document.getElementById("result").value = "";
+  });
 
 
 
@@ -665,76 +670,78 @@ function Validate() {
 
   code = "<article class='container ";
   input = document.getElementById("titre_kw").value;
-  code = code + input + "'> \n\n <h3 class='container' id='a";
+  code = code + input + "'> \n\n <h3 class='st1' id='a";
   input = document.getElementById("article_pos").value;
   code = code + input + "'>";
   input = document.getElementById("titre").value;
-  code = code + input + "</h3> \n\n";
+  code = code + input + "</h3> \n\n <div class='dh3'> \n";
   input = document.getElementById("text_titre").value;
-  code = code + input + "\n\n ";
-
+  code = code + input + "\n </div> \n\n ";
 
 
   for (var i = 1 ; i <= nb_st ; i++)
   {
+    nb_sst = 0;
     input = document.getElementById("stitre" + i + "_kw").value;
-    code = code + "<div class='" + input + "'> \n\n <h4 class='container' id='a";
+    code = code + "<div class='" + input + "'> \n\n <h4 class='st2' id='a";
     input = document.getElementById("article_pos").value;
-    code = code + input + "st" + i + ">'";
+    code = code + input + "st" + i + "'>";
     input = document.getElementById("stitre" + i).value;
-    code = code + input + "</h4> \n\n";
+    code = code + input + "</h4> \n\n <div class='dh4'> \n";
     input = document.getElementById("text_stitre" + i).value;
-    code = code + input + "\n\n ";
+    code = code + input + "\n </div> \n\n  ";
+
 
     switch (i) {
       case 1:
         nb_sst = nbsst_1;
         break;
-      case '2':
+      case 2:
         nb_sst = nbsst_2;
         break;
-      case '3':
+      case 3:
         nb_sst = nbsst_3;
         break;
-      case '4':
+      case 4:
         nb_sst = nbsst_4;
         break;
-      case '5':
+      case 5:
         nb_sst = nbsst_5;
         break;
-      case '6':
+      case 6:
         nb_sst = nbsst_6;
         break;
-      case '7':
+      case 7:
         nb_sst = nbsst_7;
         break;
-      case '8':
+      case 8:
         nb_sst = nbsst_8;
         break;
-      case '9':
+      case 9:
         nb_sst = nbsst_9;
         break;
-      case '10':
+      case 10:
         nb_sst = nbsst_10;
         break;
     }
 
+
     for (var j = 1 ; j <= nb_sst ; j++)
     {
       input = document.getElementById("sstitre" + i + "_" + j + "_kw").value;
-      code = code + "<div class='" + input + "'> \n\n <h5 class='container' id='a";
+      code = code + "<div class='" + input + "'> \n\n <h5 class='st3' id='a";
       input = document.getElementById("article_pos").value;
-      code = code + input + "st" + i + "sst" + j + ">'";
+      code = code + input + "st" + i + "sst" + j + "'> \n <div class='dh5'>";
       input = document.getElementById("sstitre" + i + "_" + j).value;
       code = code + input + "</h5> \n\n";
       input = document.getElementById("text_sstitre" + i + "_" + j).value;
-      code = code + input + "\n\n </div>";
+      code = code + input + "\n </div> \n\n";
     }//fin boucle for j (nb_sst)
-    code = code + " \n </div>";
+    code = code + " \n </div> \n";
 
   } //fin boucle for i (nb_st)
-  code = code + " \n </article>";
+  code = code + " \n </div> \n </article>";
 
-  alert(code);
+  document.getElementById("result").value = code;
 
 };
