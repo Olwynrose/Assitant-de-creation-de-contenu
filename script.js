@@ -670,26 +670,26 @@ function Validate() {
 
   code = "<article class='container ";
   input = document.getElementById("titre_kw").value;
-  code = code + input + "'> \n\n <h3 class='st1' id='a";
+  code = code + input + "'> \n <div class='elmt'> \n\n <h3 class='st1' id='a";
   input = document.getElementById("article_pos").value;
   code = code + input + "'>";
   input = document.getElementById("titre").value;
   code = code + input + "</h3> \n\n <div class='dh3'> \n";
   input = document.getElementById("text_titre").value;
-  code = code + input + "\n </div> \n\n ";
+  code = code + input + "\n </div> \n </div> \n\n ";
 
 
   for (var i = 1 ; i <= nb_st ; i++)
   {
     nb_sst = 0;
     input = document.getElementById("stitre" + i + "_kw").value;
-    code = code + "<div class='" + input + "'> \n\n <h4 class='st2' id='a";
+    code = code + "<div class='" + input + "'> \n <div class='elmt'> \n\n <h4 class='st2' id='a";
     input = document.getElementById("article_pos").value;
     code = code + input + "st" + i + "'>";
     input = document.getElementById("stitre" + i).value;
     code = code + input + "</h4> \n\n <div class='dh4'> \n";
     input = document.getElementById("text_stitre" + i).value;
-    code = code + input + "\n </div> \n\n  ";
+    code = code + input + "\n </div> \n </div> \n\n  ";
 
 
     switch (i) {
@@ -729,13 +729,13 @@ function Validate() {
     for (var j = 1 ; j <= nb_sst ; j++)
     {
       input = document.getElementById("sstitre" + i + "_" + j + "_kw").value; // récupération des motclés du sous sous titre
-      code = code + "<div class='" + input + "'> \n <h5 class='st3' id='a";
+      code = code + "<div class='" + input + "'> \n <div class='elmt'> \n\n <h5 class='st3' id='a";
       input = document.getElementById("article_pos").value; // récupération de la position de l'article pour l'id du sous sous titre
       code = code + input + "st" + i + "sst" + j + "'>";
       input = document.getElementById("sstitre" + i + "_" + j).value; //récupération du nom du sous sous titre
       code = code + input + "</h5> \n\n <div class='dh5'> \n";
       input = document.getElementById("text_sstitre" + i + "_" + j).value; // récupération du texte du sous sous titre
-      code = code + input + "\n </div> \n\n";
+      code = code + input + "\n </div> \n </div> \n\n";
     }//fin boucle for j (nb_sst)
     code = code + " \n </div> \n";
 
