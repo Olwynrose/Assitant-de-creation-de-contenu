@@ -735,12 +735,12 @@ function Validate() {
       input = document.getElementById("sstitre" + i + "_" + j).value; //récupération du nom du sous sous titre
       code = code + input + "</h5> \n\n <div class='dh5'> \n";
       input = document.getElementById("text_sstitre" + i + "_" + j).value; // récupération du texte du sous sous titre
-      code = code + input + "\n </div> \n </div> \n\n";
+      code = code + input + "\n </div> \n </div> \n </div> \n";
     }//fin boucle for j (nb_sst)
     code = code + " \n </div> \n";
 
   } //fin boucle for i (nb_st)
-  code = code + " \n </div> \n </article>";
+  code = code + "\n </article>";
 
   document.getElementById("result").value = code;
 
