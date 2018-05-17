@@ -728,13 +728,13 @@ function Validate() {
 
     for (var j = 1 ; j <= nb_sst ; j++)
     {
-      input = document.getElementById("sstitre" + i + "_" + j + "_kw").value;
-      code = code + "<div class='" + input + "'> \n\n <h5 class='st3' id='a";
-      input = document.getElementById("article_pos").value;
-      code = code + input + "st" + i + "sst" + j + "'> \n <div class='dh5'>";
-      input = document.getElementById("sstitre" + i + "_" + j).value;
-      code = code + input + "</h5> \n\n";
-      input = document.getElementById("text_sstitre" + i + "_" + j).value;
+      input = document.getElementById("sstitre" + i + "_" + j + "_kw").value; // récupération des motclés du sous sous titre
+      code = code + "<div class='" + input + "'> \n <h5 class='st3' id='a";
+      input = document.getElementById("article_pos").value; // récupération de la position de l'article pour l'id du sous sous titre
+      code = code + input + "st" + i + "sst" + j + "'>";
+      input = document.getElementById("sstitre" + i + "_" + j).value; //récupération du nom du sous sous titre
+      code = code + input + "</h5> \n\n <div class='dh5'> \n";
+      input = document.getElementById("text_sstitre" + i + "_" + j).value; // récupération du texte du sous sous titre
       code = code + input + "\n </div> \n\n";
     }//fin boucle for j (nb_sst)
     code = code + " \n </div> \n";
